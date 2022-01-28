@@ -1,5 +1,5 @@
 ---
-- src: https://github.com/asa1997/ansible-role-oah-google
+- src: https://github.com/asa1997/ansible-role-oah-chrome
   version: main
   name: oah.chrome
 - src: https://github.com/asa1997/ansible-role-oah-drupal
