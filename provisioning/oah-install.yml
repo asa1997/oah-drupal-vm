@@ -13,9 +13,9 @@
       debug:
         msg: In pre_tasks
     # Will need the shell provision to install python-minimal first
-    - name: Install python3 and python3-pip for Ansible
-      become: yes
-      raw: test -e /usr/bin/python || (sudo apt -y update && apt install -y python3.8 && sudo apt install -y python3-pip)
+#     - name: Install python3 and python3-pip for Ansible
+#       become: yes
+#       raw: test -e /usr/bin/python || (sudo apt -y update && apt install -y python3.8 && sudo apt install -y python3-pip)
     - include: tasks/init-debian.yml
       when: ansible_os_family == 'Debian'
     
