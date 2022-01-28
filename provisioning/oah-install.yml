@@ -35,7 +35,6 @@
     - oah.mysql
     - oah.php
     - oah.drupal
-    - oah.desktop
     - oah.chrome
 
       #- oah.vscode
