@@ -14,9 +14,9 @@
 - src: https://github.com/asa1997/ansible-role-oah-php
   version: main
   name: oah.php
-# - src: https://github.com/asa1997/ansible-role-oah-jupyter
-#   version: main
-#   name: oah.jupyter
+- src: https://github.com/asa1997/ansible-role-oah-jupyter
+  version: main
+  name: oah.jupyter
 # - src: https://github.com/asa1997/ansible-role-oah-gh
 #   version: main
 #   name: oah.gh
