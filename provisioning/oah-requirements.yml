@@ -32,9 +32,6 @@
 # - src: https://github.com/Be-Secure/ansible-role-oah-usage
 #   version: master
 #   name: oah.usage
-# - src: https://github.com/Be-Secure/ansible-role-oah-projects
-#   version: master
-#   name: oah.projects
 # - src: https://github.com/Be-Secure/ansible-role-oah-git
 #   version: master
 #   name: oah.git
