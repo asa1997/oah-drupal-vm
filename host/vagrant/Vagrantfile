@@ -34,9 +34,12 @@ $script_local_ansible = <<SCRIPT
 git config --global http.sslverify false
 git clone $OAH_GITHUB_URL/$env_repo_name.git
 sudo sed -i 's/archive/in.archive/g' /etc/apt/sources.list
-sudo apt-get update
-sudo apt-get install -y --no-install-recommends ansible
-
+sudo apt update
+sudo apt upgrade -y
+sudo apt install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
 mkdir -p $VHOME/$env_repo_name/roles
 ansible-galaxy install -r $VHOME/$env_repo_name/provisioning/oah-requirements.yml -p $VHOME/$env_repo_name/provisioning/roles
 ansible-playbook  --extra-vars "ansible_become_pass=vagrant"  $VHOME/$env_repo_name/provisioning/oah-install.yml
@@ -73,8 +76,8 @@ chmod 600 /home/vagrant/.ssh/authorized_keys
 ls -al /home/vagrant/.ssh
 chmod 700 /home/vagrant/.ssh
 ls -al /home/vagrant
-sudo apt update -y
-sudo apt-get install -y --no-install-recommends ansible
+sudo apt update 
+# sudo apt-get install -y --no-install-recommends ansible
 # test -e /usr/bin/python || (sudo apt -y update && apt install -y python-minimal)
 # sudo apt update -y 
 sudo systemctl disable apt-daily.service
