@@ -31,9 +31,9 @@
       register: oah
       failed_when: not oah.stat.exists
   roles:
-    - oah.apache
-    - oah.mysql
-    - oah.php
+#     - oah.apache
+#     - oah.mysql
+#     - oah.php
     - oah.drupal
 #     - oah.chrome
 
