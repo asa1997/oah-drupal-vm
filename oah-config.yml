@@ -98,17 +98,39 @@ oahvm_cron_jobs: []
 #
 # nginx_remove_default_vhost: true
 
+---
+# defaults file for ansible-role-oah-drupal
 drupal_core_version: "8.6.5"
-artifact_url: "https://ftp.drupal.org/files/projects/drupal-{{drupal_core_version}}.zip"
+drupal_artifact_url: "https://ftp.drupal.org/files/projects/drupal-{{drupal_core_version}}.zip"
 drupal_deploy_dir: "/var/www/html/"
 drupal_core_zip: "{{drupal_deploy_dir}}/drupal-{{drupal_core_version}}.zip"
 drupal_core: "{{drupal_deploy_dir}}/drupal-{{drupal_core_version}}"
 drupal_default_path: "{{drupal_core}}/sites/default"
 
+drupal_apt_packages:
+  - zip
+  - unzip
+
 drupal_db_user: "drupal_user"
 drupal_db_password: "12345"
 drupal_db_host: "localhost"
 drupal_db_name: "drupal_db"
+
+apache2_default_conf_path: "/etc/apache2/sites-enabled/000-default.conf"
+
+ht_access_raw_code:
+  - "<Directory /var/www/html>"
+  - "AllowOverride All"
+  - "</Directory>"
+  
+oah_vm_mode: "host"
+
+php_cli_ini_path: "/etc/php/7.2/cli/php.ini"
+
+phar_raw_code:
+  - "[Phar]"
+  - "phar.readonly = Off"
+  - "phar.require_hash = Off"
 
 # Comment out any extra utilities you don't want to install. If you don't want
 # to install *any* extras, make set this value to an empty set, e.g. `[]`.
