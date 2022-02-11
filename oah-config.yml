@@ -98,8 +98,8 @@ oahvm_cron_jobs: []
 #
 # nginx_remove_default_vhost: true
 
----
-# defaults file for ansible-role-oah-drupal
+
+# *******Defaults for ansible-role-oah-drupal********
 drupal_core_version: "8.6.5"
 drupal_artifact_url: "https://ftp.drupal.org/files/projects/drupal-{{drupal_core_version}}.zip"
 drupal_deploy_dir: "/var/www/html/"
